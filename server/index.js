@@ -10,13 +10,13 @@ import generalRoutes from './routes/general.js';
 import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
 
-
 // data imports to database
 import User from "./models/User.js";
 import Product from './models/Product.js'
 import ProductStat from './models/ProductStat.js'
 import Transaction from './models/Transaction.js'
-import { dataUser, dataProduct, dataProductStat, dataTransaction  } from './data/index.js'
+import OverallStat from './models/OverallStat.js'
+import { dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat  } from './data/index.js'
 
 /* config */
 dotenv.config();
@@ -47,6 +47,7 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     /* Only add data one time */
+    // OverallStat.insertMany(dataOverallStat)
     // Product.insertMany(dataProduct)
     // ProductStat.insertMany(dataProductStat)
     // User.insertMany(dataUser);
